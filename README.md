@@ -5,7 +5,7 @@ A full-stack e-commerce application built using Spring Boot, MySQL, JWT authenti
 ## Live Demo
 
 * Deployed Application: [https://ecommerce-fullstack-dz04.onrender.com](https://ecommerce-fullstack-dz04.onrender.com)
-* GitHub Repository: [https://github.com/prajapatpiyush/ecommerce-fullstack](https://github.com/prajapatpiyush/ecommerce-fullstack)
+
 
 ---
 
