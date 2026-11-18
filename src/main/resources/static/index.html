@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Com Store | Premium Shopping</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- Premium UI Enhancements --- */
+    .hero {
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; opacity: 0.9; }
+
+    .features-strip {
+        display: flex;
+        justify-content: space-around;
+        padding: 40px 20px;
+        background: white;
+        margin-bottom: 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .feature-item { text-align: center; flex: 1; }
+    .feature-item h4 { margin-top: 10px; color: #2c3e50; }
+    .feature-item p { font-size: 13px; color: #7f8c8d; }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        position: relative;
+    }
+    .section-title::after {
+        content: '';
+        width: 60px;
+        height: 3px;
+        background: #3498db;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Product Grid Layout */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    /* Fixed Card Style to match your Premium UI */
+    .product-card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: 0.3s;
+    }
+    .product-card:hover { transform: translateY(-10px); }
+    .product-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    footer {
+        background: #2c3e50;
+        color: #bdc3c7;
+        padding: 50px 20px 20px;
+        margin-top: 60px;
+    }
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #3e4f5f;
+        font-size: 14px;
+    }
+
+    .price-tag { color: #2ecc71; font-weight: bold; font-size: 1.4rem; margin: 10px 0; }
+    .btn-buy {
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav-container" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+  <div class="logo"><h2>E-Com Store</h2></div>
+  <div>
+    <a href="login.html" style="text-decoration: none; color: #3498db; font-weight: bold;">Admin Portal</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Upgrade Your Lifestyle</h1>
+  <p>Exclusive deals on Electronics, Fashion, and more.</p>
+</header>
+
+<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+  <section class="features-strip">
+    <div class="feature-item">
+      <h3 style="font-size: 2rem;">🚚</h3>
+      <h4>Free Delivery</h4>
+      <p>On all orders above ₹999</p>
+    </div>
+    <div class="feature-item">
+      <h3 style="font-size: 2rem;">🛡️</h3>
+      <h4>Secure Payment</h4>
+      <p>100% safe transactions</p>
+    </div>
+    <div class="feature-item">
+      <h3 style="font-size: 2rem;">🔄</h3>
+      <h4>Easy Returns</h4>
+      <p>7-day replacement policy</p>
+    </div>
+  </section>
+
+  <h2 class="section-title">New Arrivals</h2>
+  <div id="productDisplay" class="product-grid">
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>About Us</h3>
+      <p>We provide high-quality products directly to your doorstep. Your satisfaction is our priority.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <p>Track Order</p>
+      <p>Privacy Policy</p>
+      <p>Terms & Conditions</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>📧 support@ecom.com</p>
+      <p>📍 Indore, India</p>
+      <p>📞 +91 123456789</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 E-Com Store. All rights reserved. | Made by Piyush
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

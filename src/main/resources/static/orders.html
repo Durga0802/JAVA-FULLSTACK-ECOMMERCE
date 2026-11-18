@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Orders | E-Com Admin</title>
+
+    <link rel="icon" href="data:,">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .status-pending { background: #fff3cd; color: #856404; }
+        .status-delivered { background: #d4edda; color: #155724; }
+
+        /* Table Action Button */
+        .btn-view {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body id="mainBody" >
+
+<div class="dashboard-container">
+    <aside class="sidebar">
+        <h2>E-Com Admin</h2>
+        <nav>
+            <ul>
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="products.html">Manage Products</a></li>
+                <li><a href="orders.html" class="active">View Orders</a></li>
+                <hr style="border: 0.5px solid #444; margin: 10px 0;">
+                <li><a href="index.html">Go to Store</a></li>
+                <li><a href="#" onclick="logout()" style="color: #ff7675;">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Customer Orders</h1>
+            <div class="user-info">Admin Panel</div>
+        </header>
+
+        <section class="table-container" style="margin-top: 20px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                <tr style="text-align: left; border-bottom: 2px solid #eee;">
+                    <th style="padding: 12px;">Order ID</th>
+                    <th style="padding: 12px;">Customer</th>
+                    <th style="padding: 12px;">Total Price</th>
+                    <th style="padding: 12px;">Date</th>
+                    <th style="padding: 12px;">Status</th>
+                    <th style="padding: 12px;">Action</th>
+                </tr>
+                </thead>
+                <tbody id="orderList">
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="app.js"></script>
+<script>
+    window.onload = function() {
+        checkAuth(); // Security check
+        loadOrders(); // Fetch orders logic
+    };
+</script>
+</body>
+</html>

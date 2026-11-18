@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Product | E-Comm Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-container { background: white; padding: 30px; border-radius: 10px; max-width: 600px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin: 20px auto; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        .btn-save { background: #2ecc71; color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; }
+        .preview-img { width: 100px; height: 100px; object-fit: cover; border-radius: 5px; margin-top: 10px; display: none; border: 1px solid #ddd; }
+    </style>
+</head>
+<body id="mainBody">
+
+<div class="dashboard-container">
+    <main class="main-content">
+        <header class="header">
+            <h1 id="pageTitle">Add New Item</h1>
+        </header>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="text" id="name" placeholder="Laptop, Shoes, etc.">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea id="description" rows="3" placeholder="Brief details about the product"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Price (₹)</label>
+                <input type="number" id="price">
+            </div>
+            <div class="form-group">
+                <label>Stock Quantity</label>
+                <input type="number" id="stock" value="10">
+            </div>
+            <div class="form-group">
+                <label>Category ID</label>
+                <input type="number" id="catId" value="1">
+            </div>
+            <div class="form-group">
+                <label>Product Image URL</label>
+                <input type="text" id="externalImageUrl" placeholder="https://example.com/image.jpg" class="form-control">
+                <small style="color: #7f8c8d;">Tip: Google se image link copy karke yahan paste karein.</small>
+            </div>
+
+            <div class="form-group" style="border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px;">
+                <label>Or Upload Local File</label>
+                <input type="file" id="image" class="form-control">
+                <img id="imgPreview" class="preview-img">
+            </div>
+            <button id="saveBtn" class="btn-save" onclick="saveProduct()">Save to Inventory</button>
+            <button onclick="window.location.href='products.html'" style="background:none; border:none; color:#7f8c8d; cursor:pointer; width:100%; margin-top:10px;">Cancel</button>
+        </div>
+    </main>
+</div>
+
+<script src="app.js"></script>
+<script>
+    // Image Preview Logic (Local)
+    document.getElementById('image').onchange = evt => {
+        const file = evt.target.files[0];
+        if (file) {
+            const preview = document.getElementById('imgPreview');
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = 'block';
+        }
+    }
+    // Window.onload is now handled in app.js for all logic
+</script>
+</body>
+</html>
